@@ -103,48 +103,51 @@ const data = [
 
 */
 
-function article(data) {
-  let bigContainer = document.querySelector('.articles');
-  console.log(bigContainer);
+let bigContainer = document.querySelector('.articles');
+
+
+function article(d) {
 
   const container = document.createElement('div');
   container.classList.add('article');
   bigContainer.appendChild(container);
 
   const title = document.createElement('h2');
-  title.textContent = `${data.title}`;
+  title.textContent = `${d.title}`;
   container.appendChild(title);
 
   const date = document.createElement('p');
   date.classList.add('date');
-  date.textContent =  `${data.date}`;
+  date.textContent =  `${d.date}`;
   container.appendChild(date);
 
 
   const paraOne = document.createElement('p');
-  paraOne.textContent = `${data.firstParagraph}`;
+  paraOne.textContent = `${d.firstParagraph}`;
   container.appendChild(paraOne);
 
   const paraTwo = document.createElement('p');
-  paraOne.textContent = `${data.secondParagraph}`;
+  paraTwo.textContent = `${d.secondParagraph}`;
   container.appendChild(paraTwo);
 
   const paraThree = document.createElement('p');
-  paraOne.textContent = `${data.thirdParagraph}`;
+  paraThree.textContent = `${d.thirdParagraph}`;
   container.appendChild(paraThree);
 
   const expButton = document.createElement('span');
   expButton.classList.add('expandButton');
+  expButton.textContent = 'Expand';
   container.appendChild(expButton);
 
-  // document.querySelector('.articles').appendChild(container,title,date,paraOne,paraTwo,paraThree,expButton)
-}
+
+};
 
 data.forEach( (obj) => {
   let newArticle = article(obj);
 
-  parent.appendChild(newArticle)
-})
+  bigContainer.appendChild(newArticle);
+});
+
 /*
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.

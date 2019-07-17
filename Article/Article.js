@@ -138,15 +138,28 @@ function article(d) {
   expButton.classList.add('expandButton');
   expButton.textContent = 'Expand';
   container.appendChild(expButton);
+  expButton.addEventListener('click', (ev) => {
+    container.classList.toggle('article-open')
+  })
 
+  // data.forEach( (obj) => {
+  //   let newArticle = article(obj);
+  //
+  //   bigContainer.appendChild(newArticle);
+  // });
 
+  return
 };
 
-data.forEach( (obj) => {
-  let newArticle = article(obj);
+let mappedArticles = data.map( (arrayItem) => {
+  let newArticle = article(arrayItem);
 
-  bigContainer.appendChild(newArticle);
-});
+  return newArticle
+})
+
+mappedArticles.forEach( component => {
+  bigContainer.appendChild(component)
+})
 
 /*
 

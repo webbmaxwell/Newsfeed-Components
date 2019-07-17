@@ -107,7 +107,7 @@ const data = [
 let bigContainer = document.querySelector('.articles');
 
 
-function article(d) {
+function Article (d) {
 
   const container = document.createElement('div');
   container.classList.add('article');
@@ -149,12 +149,25 @@ function article(d) {
 
   //Step 4
 let mappedArticles = data.map( (arrayItem) => {
-  let newArticle = article(arrayItem);
+  let newArticle = Article(arrayItem);
 
   return newArticle
 })
 
+
   //Step 5
+myData = {
+  title: 'This is MY Article',
+  date: 'July 16, 2019',
+  firstParagraph: 'Here is some content for the first paragraph',
+  secondParagraph: 'Here is some content for the second paragraph',
+  thirdParagraph: 'Here is some content for the third paragraph',
+}
+
+const myArticle = new Article(myData);
+
+
+
 
 //I don't know why the following code throws an error and does not affect the outcome.
 

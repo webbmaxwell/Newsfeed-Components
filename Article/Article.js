@@ -152,7 +152,7 @@ let mappedArticles = data.map( (arrayItem) => {
   let newArticle = Article(arrayItem);
 
   return newArticle
-})
+});
 
 
   //Step 5
@@ -165,15 +165,6 @@ myData = {
 }
 
 const myArticle = new Article(myData);
-
-
-
-
-//I don't know why the following code throws an error and does not affect the outcome.
-
-// mappedArticles.forEach( component => {
-//   bigContainer.appendChild(component)
-// })
 
 /*
 

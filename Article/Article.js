@@ -102,7 +102,49 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
 */
-class Article 
+
+function article(data) {
+  let bigContainer = document.querySelector('.articles');
+  console.log(bigContainer);
+
+  const container = document.createElement('div');
+  container.classList.add('article');
+  bigContainer.appendChild(container);
+
+  const title = document.createElement('h2');
+  title.textContent = `${data.title}`;
+  container.appendChild(title);
+
+  const date = document.createElement('p');
+  date.classList.add('date');
+  date.textContent =  `${data.date}`;
+  container.appendChild(date);
+
+
+  const paraOne = document.createElement('p');
+  paraOne.textContent = `${data.firstParagraph}`;
+  container.appendChild(paraOne);
+
+  const paraTwo = document.createElement('p');
+  paraOne.textContent = `${data.secondParagraph}`;
+  container.appendChild(paraTwo);
+
+  const paraThree = document.createElement('p');
+  paraOne.textContent = `${data.thirdParagraph}`;
+  container.appendChild(paraThree);
+
+  const expButton = document.createElement('span');
+  expButton.classList.add('expandButton');
+  container.appendChild(expButton);
+
+  // document.querySelector('.articles').appendChild(container,title,date,paraOne,paraTwo,paraThree,expButton)
+}
+
+data.forEach( (obj) => {
+  let newArticle = article(obj);
+
+  parent.appendChild(newArticle)
+})
 /*
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.

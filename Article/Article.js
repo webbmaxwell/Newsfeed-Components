@@ -103,6 +103,7 @@ const data = [
 
 */
 
+  //Step 1
 let bigContainer = document.querySelector('.articles');
 
 
@@ -138,32 +139,32 @@ function article(d) {
   expButton.classList.add('expandButton');
   expButton.textContent = 'Expand';
   container.appendChild(expButton);
+  //Step 2
   expButton.addEventListener('click', (ev) => {
     container.classList.toggle('article-open')
   })
-
-  // data.forEach( (obj) => {
-  //   let newArticle = article(obj);
-  //
-  //   bigContainer.appendChild(newArticle);
-  // });
-
+  //Step 3
   return
 };
 
+  //Step 4
 let mappedArticles = data.map( (arrayItem) => {
   let newArticle = article(arrayItem);
 
   return newArticle
 })
 
-mappedArticles.forEach( component => {
-  bigContainer.appendChild(component)
-})
+  //Step 5
+
+//I don't know why the following code throws an error and does not affect the outcome.
+
+// mappedArticles.forEach( component => {
+//   bigContainer.appendChild(component)
+// })
 
 /*
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
@@ -171,6 +172,6 @@ mappedArticles.forEach( component => {
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article
 
 */

@@ -22,38 +22,30 @@ let menuItems = [
   Pass the function an array as it's only argument.
 */
 
-let header = document.querySelector('.header');
 
-function Menu (array) {
+function menuComponent (array) {
   const menuDiv = document.createElement('div');
   menuDiv.classList.add('menu');
-  header.appendChild(menuDiv);
 
   const menuList = document.createElement('ul');
   menuDiv.appendChild(menuList);
 
-  array.forEach( (item) =>{
+  array.forEach( item =>{
     let thing = document.createElement('li');
-    item.textContent = 'item';
-    menuDiv.appendChild(thing);
+    thing.textContent = item;
+    menuList.appendChild(thing);
   });
 
-  const menuButton = document.querySelector('menu-button');
-  menuButton.addEventListener('click', (ev) => {
-    ev.target.classList.toggle('menu--open');
+  const menuButton = document.querySelector('.menu-button');
+  menuButton.addEventListener('click', () => {
+    menuDiv.classList.toggle('menu--open');
   });
-  menuDiv.appendChild(menuButton)
 
-  return
+  return menuDiv
 }
 
-Menu(menuItems);
-
-// let mappedItems = menuItems.map( (arrayItem) => {
-//   let newItem = Menu(arrayItem);
-//
-//   return newItem;
-// })
+const header = document.querySelector('.header');
+header.appendChild(menuComponent(menuItems))
 
 /*
   Step 2: Iterate over the array creating a list item <li> element for each item in the array.
